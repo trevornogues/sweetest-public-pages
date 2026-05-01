@@ -12,7 +12,7 @@
     <header class="legal-header">
       <p class="breadcrumb"><a href="/sweetest-public-pages/">&larr; Sweetest</a></p>
       <h1>Privacy Policy</h1>
-      <p class="effective">Effective date: April 27, 2026</p>
+      <p class="effective">Effective date: April 30, 2026</p>
     </header>
 
     <p>This Privacy Policy describes how Trevor Nogues ("we," "us," or "our") collects, uses, and shares information when you use the Sweetest mobile application (the "App"). By using the App, you agree to this Privacy Policy. If you do not agree, do not use the App.</p>
@@ -22,9 +22,10 @@
     <h3>Information you provide</h3>
     <ul>
       <li><strong>Account information.</strong> When you create an account, we collect your email address, password (stored only in hashed form by Firebase Authentication), and a username you choose.</li>
-      <li><strong>Profile settings.</strong> Your privacy setting (public or private profile) and any custom categories you create.</li>
-      <li><strong>User-generated content.</strong> The places, rankings (Top 5 entries), cities, optional notes, and optional photos you add to the App.</li>
-      <li><strong>Social graph.</strong> The accounts you choose to follow.</li>
+      <li><strong>Profile information.</strong> Your optional display name, bio, home city, profile photo, privacy setting (public or private profile), and any custom categories you create.</li>
+      <li><strong>User-generated content.</strong> The places, rankings, cities, optional notes, and optional photos you add to the App, along with comments and likes you leave on other users&rsquo; entries.</li>
+      <li><strong>Social graph.</strong> The accounts you choose to follow, follow requests you send or receive, and any accounts you choose to block.</li>
+      <li><strong>Reports.</strong> If you report another user, comment, or entry, we collect the report category, your optional message, and the identifier of the reported content so we can review and act on it.</li>
       <li><strong>Communications.</strong> If you contact us by email, we receive the contents of that email.</li>
     </ul>
 
@@ -32,9 +33,10 @@
     <ul>
       <li><strong>Device and usage data.</strong> Our backend provider (Google Firebase) may collect basic technical information such as device type, operating system, app version, IP address, and crash logs to keep the service running and secure.</li>
       <li><strong>Authentication metadata.</strong> Sign-in timestamps and authentication tokens needed to keep you signed in.</li>
+      <li><strong>Approximate device location (optional, foreground only).</strong> If you grant the App permission, we read a low-accuracy device location <em>only while the App is open</em> and use it to bias place-search results to where you are. We never track your location in the background, do not store the raw coordinates on our servers, and do not associate them with your account. You can deny or revoke this permission at any time in your device settings; the App will fall back to your home city or a default city for biasing.</li>
     </ul>
 
-    <p>We do not use third-party advertising SDKs and we do not collect precise device location.</p>
+    <p>We do not use third-party advertising SDKs.</p>
 
     <h2>2. How We Use Information</h2>
     <p>We use the information we collect to:</p>
@@ -50,9 +52,15 @@
     <h2>3. How Information Is Shared</h2>
     <p>We do not sell your personal information. We share information only as follows:</p>
     <ul>
-      <li><strong>With other users.</strong> If your profile is set to public, your username, profile, rankings, photos, and follow relationships are visible to other Sweetest users. If your profile is private, only users you approve can see your content. (Where the App offers a private setting; check the Profile screen for current options.)</li>
-      <li><strong>City rankings.</strong> Aggregated, non-personally-identifiable counts of rankings per city may be shown to all users.</li>
-      <li><strong>Service providers.</strong> We use Google Firebase (Authentication, Cloud Firestore, Cloud Storage) to host the App's data and run the App. Firebase processes data on our behalf under Google's terms; see <a href="https://firebase.google.com/support/privacy">Firebase's Privacy and Security page</a> for details.</li>
+      <li><strong>With other users.</strong> If your profile is set to public, your username, profile, rankings, photos, and follow relationships are visible to other Sweetest users. If your profile is private, only users you approve as followers can see your photos, notes, and individual ranking lists. Your votes still contribute anonymously to city-level leaderboards regardless of your privacy setting.</li>
+      <li><strong>City and region rankings.</strong> Aggregated, non-personally-identifiable counts of rankings per place, city, or region may be shown to all users.</li>
+      <li><strong>Service providers.</strong> We share information with vendors who process data on our behalf under contractual privacy obligations:
+        <ul>
+          <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Storage, Cloud Functions) hosts the App&rsquo;s data and runs our backend. See <a href="https://firebase.google.com/support/privacy">Firebase&rsquo;s Privacy and Security page</a>.</li>
+          <li><strong>Foursquare</strong> powers our place-search autocomplete. When you type into a place-search field in the App, we send your search query and an approximate location bias (your device location, your home city, or a default city) to Foursquare to retrieve matching place suggestions. Your account identifier is never sent. See <a href="https://foursquare.com/legal/privacy/">Foursquare&rsquo;s Privacy Policy</a>.</li>
+          <li><strong>Apple TestFlight</strong> (during beta only). While Sweetest is distributed through TestFlight, Apple collects standard tester information (Apple ID, device, build, sessions, and any feedback you submit) per <a href="https://www.apple.com/legal/privacy/data/en/test-flight/">Apple&rsquo;s TestFlight privacy disclosures</a>.</li>
+        </ul>
+      </li>
       <li><strong>Legal and safety.</strong> We may disclose information if we believe in good faith that doing so is necessary to comply with law, enforce our Terms, or protect the rights, property, or safety of users or the public.</li>
       <li><strong>Business transfers.</strong> If Sweetest is involved in a merger, acquisition, or asset sale, your information may be transferred as part of that transaction. We will notify you of any such change.</li>
     </ul>

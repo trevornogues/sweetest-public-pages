@@ -53,6 +53,112 @@ body {
   font-size: 17px;
 }
 
+/*
+ * Landing variant of the hero. Used by index.html (not the legal pages),
+ * which carries a beta badge above the wordmark and a CTA below the
+ * tagline. Removes the bottom border so the CTA breathes into the next
+ * section without a visible seam.
+ */
+.hero--landing {
+  border-bottom: none;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+.beta-badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(217, 119, 87, 0.12);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cta-row {
+  margin-top: 28px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-bottom: none;
+  transition: transform 120ms ease, box-shadow 120ms ease,
+    background 120ms ease;
+}
+
+.cta:hover {
+  border-bottom: none;
+}
+
+.cta--primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(217, 119, 87, 0.28);
+}
+
+.cta--primary:hover {
+  background: #c9684a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(217, 119, 87, 0.32);
+}
+
+.cta-helper {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.cta-helper--inline {
+  margin-top: 16px;
+  text-align: left;
+}
+
+/*
+ * Marketing sections — features and onboarding steps. Both reuse the
+ * existing `h2` / `p` rhythm so the visual relationship with the legal
+ * pages stays tight; the only new structure is the stronger feature
+ * list and the numbered steps.
+ */
+.features,
+.steps,
+.footer-meta {
+  margin-bottom: 24px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.feature-list li strong {
+  color: var(--text);
+}
+
+.steps ol {
+  padding-left: 22px;
+}
+
+.steps ol li {
+  margin-bottom: 10px;
+}
+
 .legal-header {
   margin-bottom: 24px;
 }
