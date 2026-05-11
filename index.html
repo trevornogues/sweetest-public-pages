@@ -4,23 +4,54 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sweetest — Rank the best sweet treats you've eaten</title>
+  <meta name="theme-color" content="#FAF7F5" />
   <meta
     name="description"
-    content="Sweetest is a closed-beta iOS app for ranking the best sweet treats you've eaten. Piloting in Seattle, NYC, LA, and SF — join the TestFlight beta."
+    content="A closed-beta iOS app for ranking the best sweet treats you've eaten. Personal top-10s for cookies, croissants, ice cream, boba and more — piloting in Seattle, NYC, LA, and SF."
   />
+
   <meta property="og:title" content="Sweetest — Rank the best sweet treats" />
   <meta
     property="og:description"
-    content="Closed-beta iOS app for ranking sweet treats. Piloting in 4 cities. Join via TestFlight."
+    content="Personal top-10s for the sweet things you actually care about. Closed-beta iOS app, piloting in Seattle, NYC, LA, and SF."
   />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://trevornogues.github.io/sweetest-public-pages/" />
+  <meta property="og:image" content="https://trevornogues.github.io/sweetest-public-pages/assets/app-icon.png" />
+  <meta property="og:image:alt" content="The Sweetest app icon: a crowned soft-serve cone on a dusty rose background." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sweetest — Rank the best sweet treats" />
+  <meta
+    name="twitter:description"
+    content="Personal top-10s for the sweet things you actually care about. Closed-beta iOS app, piloting in Seattle, NYC, LA, and SF."
+  />
+  <meta name="twitter:image" content="https://trevornogues.github.io/sweetest-public-pages/assets/app-icon.png" />
+
+  <link rel="icon" type="image/png" href="/sweetest-public-pages/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/sweetest-public-pages/assets/app-icon.png" />
   <link rel="stylesheet" href="/sweetest-public-pages/assets/style.css" />
 </head>
 <body>
+  <div class="hero-glow" aria-hidden="true"></div>
+
   <main class="container">
     <header class="hero hero--landing">
+      <img
+        class="hero__icon"
+        src="/sweetest-public-pages/assets/app-icon.png"
+        alt=""
+        width="96"
+        height="96"
+      />
       <span class="beta-badge">Closed beta · iOS · 4 pilot cities</span>
-      <h1>Sweetest</h1>
+      <h1 class="hero__wordmark">
+        <img
+          src="/sweetest-public-pages/assets/wordmark.png"
+          alt="Sweetest"
+          width="320"
+          height="213"
+        />
+      </h1>
       <p class="tagline">Rank the best sweet treats you&rsquo;ve eaten.</p>
 
       <div class="cta-row">
@@ -39,47 +70,98 @@
     </header>
 
     <section class="features">
-      <h2>What is Sweetest?</h2>
-      <p>
-        A small social app for the people in your life who actually have
-        opinions about croissants, cookies, ice cream, and matcha. Build
-        your personal top-10 across every sweet category, follow your
-        friends, and watch the city's collective ranking emerge from
-        everyone's picks.
+      <p class="section-eyebrow">What is Sweetest?</p>
+      <h2 class="section-title">A quiet little app for people with opinions about dessert.</h2>
+      <p class="section-lede">
+        No stars. No five-paragraph reviews. Just your personal top-10
+        of the sweet things you&rsquo;ve actually eaten &mdash; cookies,
+        croissants, ice cream, boba &mdash; and a slowly-emerging
+        consensus from everyone in your city.
       </p>
+
       <ul class="feature-list">
         <li>
-          <strong>Personal rankings.</strong> Every category &mdash; bakeries,
-          ice cream, boba, donuts &mdash; is its own top-10. Add a
-          treat, compare it head-to-head against a few you've already
-          ranked, and your list reorders automatically.
+          <span class="feature-num" aria-hidden="true">01</span>
+          <div>
+            <strong>Personal rankings.</strong>
+            <p>
+              Every category is its own top-10. Add a treat, compare it
+              head-to-head against a few you&rsquo;ve already ranked, and
+              your list reorders itself. You never type a score.
+            </p>
+          </div>
         </li>
         <li>
-          <strong>Friends-only feed.</strong> See what the people you
-          actually trust just ranked, with notes and photos. No
-          influencers, no algorithm.
+          <span class="feature-num" aria-hidden="true">02</span>
+          <div>
+            <strong>Friends-only feed.</strong>
+            <p>
+              See what the people you trust just ranked, with their
+              notes and photos. No influencers, no algorithm, no
+              strangers in your feed.
+            </p>
+          </div>
         </li>
         <li>
-          <strong>City &amp; region leaderboards.</strong> Your rankings
-          quietly contribute to anonymous city-wide bests. Find out
-          whether the place you love is also the place everyone else
-          loves.
+          <span class="feature-num" aria-hidden="true">03</span>
+          <div>
+            <strong>City &amp; region leaderboards.</strong>
+            <p>
+              Your picks quietly add up into anonymous city-wide
+              bests. Find out whether the place you love is also the
+              place everyone else loves &mdash; and it&rsquo;s okay to
+              disagree.
+            </p>
+          </div>
         </li>
         <li>
-          <strong>Private by default if you want it.</strong> Flip
-          privacy on and only your followers see your lists &mdash; your
-          votes still count toward city leaderboards anonymously.
+          <span class="feature-num" aria-hidden="true">04</span>
+          <div>
+            <strong>Private by default if you want.</strong>
+            <p>
+              Flip privacy on and only your approved followers see
+              your lists. Your votes still count toward city
+              leaderboards, completely anonymously.
+            </p>
+          </div>
         </li>
       </ul>
     </section>
 
+    <section class="categories">
+      <p class="section-eyebrow">What you&rsquo;ll rank</p>
+      <h2 class="section-title">Specific enough to actually matter.</h2>
+      <p class="section-lede">
+        A top-10 for &ldquo;desserts&rdquo; means nothing. A top-10 for
+        <em>chocolate chip cookies in your city</em> is a fight worth
+        having. Sweetest ships with the categories below &mdash; and you
+        can add your own.
+      </p>
+
+      <ul class="chip-grid">
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F36A;</span>Cookies</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F950;</span>Croissants</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F368;</span>Ice cream</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F366;</span>Soft serve</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F369;</span>Donuts</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F9CB;</span>Boba</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F370;</span>Cake</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F36B;</span>Chocolate</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F967;</span>Pie</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x1F35E;</span>Bread</li>
+        <li class="chip"><span class="chip__emoji" aria-hidden="true">&#x2615;</span>Drinks</li>
+        <li class="chip chip--ghost">+ your own</li>
+      </ul>
+    </section>
+
     <section class="cities">
-      <h2>Piloting in four cities</h2>
-      <p class="cities-intro">
-        We&rsquo;re starting small and going deep. If you eat sweets in
-        any of these cities, your rankings shape what the rest of the
-        city sees &mdash; and we&rsquo;d <strong>especially love your
-        help</strong> getting these leaderboards going.
+      <p class="section-eyebrow">The pilot</p>
+      <h2 class="section-title">Going deep in four cities first.</h2>
+      <p class="section-lede">
+        Your personal lists work anywhere &mdash; but the city
+        leaderboards only feel alive once enough locals have ranked.
+        If you eat sweets in any of these four, we&rsquo;d
+        <strong>especially love your help</strong> getting them going.
       </p>
       <ul class="city-grid">
         <li class="city-card">
@@ -107,20 +189,20 @@
     </section>
 
     <section class="steps">
-      <h2>How to join</h2>
-      <ol>
+      <p class="section-eyebrow">Getting in</p>
+      <h2 class="section-title">Three taps to join the beta.</h2>
+      <ol class="step-list">
         <li>
-          <strong>Tap the button above</strong> on your iPhone or iPad.
+          <strong>Tap the button at the top of this page</strong> on your iPhone.
         </li>
         <li>
-          If prompted, <strong>install Apple's TestFlight app</strong>
-          (it's free) &mdash; this is how Apple distributes pre-release
-          apps.
+          If prompted, <strong>install Apple&rsquo;s TestFlight app</strong>
+          (it&rsquo;s free) &mdash; this is how Apple distributes
+          pre-release apps.
         </li>
         <li>
           Open the link again, tap <strong>Accept</strong>, then
-          <strong>Install</strong>. Sweetest will appear on your home
-          screen.
+          <strong>Install</strong>. Sweetest will appear on your home screen.
         </li>
       </ol>
       <p class="cta-helper cta-helper--inline">
@@ -131,18 +213,25 @@
     </section>
 
     <section class="footer-meta">
-      <h2>Legal &amp; contact</h2>
+      <p class="section-eyebrow">Legal &amp; contact</p>
       <ul class="links">
         <li><a href="/sweetest-public-pages/privacy/">Privacy Policy</a></li>
         <li><a href="/sweetest-public-pages/terms/">Terms of Service</a></li>
         <li>
-          Questions or privacy / account requests:
+          Questions, privacy requests, or account help:
           <a href="mailto:noguestj@gmail.com">noguestj@gmail.com</a>
         </li>
       </ul>
     </section>
 
     <footer class="footer">
+      <img
+        class="footer__wordmark"
+        src="/sweetest-public-pages/assets/wordmark.png"
+        alt="Sweetest"
+        width="120"
+        height="80"
+      />
       <p>&copy; <span id="year"></span> Trevor Nogues. All rights reserved.</p>
     </footer>
   </main>

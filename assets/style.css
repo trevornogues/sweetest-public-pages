@@ -18,6 +18,7 @@
   --accent-strong: #b96c87;
   --accent-pressed: #d5829d;
   --accent-soft: #fbe7ee;
+  --accent-mist: #fdf3f7;  /* the lightest tint — for full-bleed glow */
 
   /* Text */
   --text: #1a1a1a;
@@ -48,14 +49,46 @@ body {
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/*
+ * Soft brand-coloured aurora behind the hero. Lives outside the
+ * container so it can extend past the 720px column and bleed to the
+ * edges of the viewport. Pointer-events: none so it never intercepts
+ * clicks; aria-hidden in markup so it's invisible to assistive tech.
+ */
+.hero-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  width: 920px;
+  max-width: 120vw;
+  height: 620px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(closest-side at 50% 30%, var(--accent-soft) 0%, rgba(251, 231, 238, 0.55) 45%, rgba(251, 231, 238, 0) 75%),
+    radial-gradient(closest-side at 30% 60%, var(--accent-mist) 0%, rgba(253, 243, 247, 0) 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 48px 24px 96px;
+  padding: 56px 24px 96px;
+  position: relative;
+  z-index: 1;
 }
 
+/*
+ * Hero block. The landing variant carries an app-icon medallion, a beta
+ * pill, the cursive wordmark image, a tagline, and a CTA. The plain
+ * `.hero` (without --landing) is used by the legal pages and stays
+ * compact with its bottom rule.
+ */
 .hero {
   text-align: center;
   padding: 24px 0 16px;
@@ -76,29 +109,55 @@ body {
   font-size: 17px;
 }
 
-/*
- * Landing variant of the hero. Used by index.html (not the legal pages),
- * which carries a beta badge above the wordmark and a CTA below the
- * tagline. Removes the bottom border so the CTA breathes into the next
- * section without a visible seam.
- */
 .hero--landing {
   border-bottom: none;
-  padding-top: 12px;
+  padding-top: 8px;
   padding-bottom: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
+}
+
+/*
+ * App-icon medallion in the hero. The icon already has its own pink
+ * background; we sit it on a soft white plate with a layered shadow so
+ * it floats off the cream canvas. Sized to match an SF iOS app-icon
+ * tile feel without overwhelming the wordmark below it.
+ */
+.hero__icon {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  border-radius: 22px; /* matches the iOS continuous-rounded squircle */
+  box-shadow:
+    0 12px 28px rgba(213, 130, 157, 0.22),
+    0 2px 6px rgba(26, 26, 26, 0.06);
+}
+
+.hero__wordmark {
+  margin: 16px 0 12px;
+  line-height: 0;
+}
+
+.hero__wordmark img {
+  display: inline-block;
+  width: min(320px, 70vw);
+  height: auto;
+  /* The wordmark is solid black-on-transparent. A light opacity nudge
+   * softens it on the cream canvas so it reads as confident editorial
+   * type rather than printer-ink black. */
+  opacity: 0.92;
 }
 
 .beta-badge {
   display: inline-block;
-  margin-bottom: 16px;
-  padding: 4px 12px;
+  margin-bottom: 8px;
+  padding: 5px 14px;
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent-strong);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -114,8 +173,8 @@ body {
   font-weight: 600;
   letter-spacing: -0.01em;
   border-bottom: none;
-  transition: transform 120ms ease, box-shadow 120ms ease,
-    background 120ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .cta:hover {
@@ -125,13 +184,13 @@ body {
 .cta--primary {
   background: var(--accent);
   color: #ffffff;
-  box-shadow: 0 6px 18px rgba(238, 159, 184, 0.32);
+  box-shadow: 0 8px 20px rgba(238, 159, 184, 0.36);
 }
 
 .cta--primary:hover {
   background: var(--accent-pressed);
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(213, 130, 157, 0.36);
+  box-shadow: 0 14px 28px rgba(213, 130, 157, 0.40);
 }
 
 .cta-helper {
@@ -146,45 +205,175 @@ body {
 }
 
 /*
- * Marketing sections — features, the pilot-cities call-out, and the
- * onboarding steps. They reuse the existing `h2` / `p` rhythm so the
- * visual relationship with the legal pages stays tight.
+ * Marketing section rhythm. Eyebrow → headline → lede → content. The
+ * eyebrow uses the brand accent so each section starts with a small
+ * splash of pink that ties back to the icon.
  */
 .features,
+.categories,
 .cities,
 .steps,
 .footer-meta {
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
+.section-eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.section-lede {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.section-lede em {
+  color: var(--text);
+  font-style: italic;
+}
+
+/*
+ * Numbered feature cards. The numeral lives in its own column so the
+ * card reads as a tidy two-column row (numeral · content) on every
+ * width without ever collapsing under the strong text.
+ */
 .feature-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .feature-list li {
-  padding: 16px 18px;
-  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 22px;
+  margin-bottom: 14px;
   background: var(--surface);
   border: 1px solid var(--border-soft);
-  border-radius: 14px;
+  border-radius: 18px;
   box-shadow: 0 2px 6px rgba(26, 26, 26, 0.04);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.feature-list li:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(26, 26, 26, 0.06);
+}
+
+.feature-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
 }
 
 .feature-list li strong {
+  display: block;
+  margin-bottom: 4px;
   color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.feature-list li p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/*
+ * Category chip grid. Compact pills with a leading emoji glyph,
+ * arranged in a soft auto-fit grid so they reflow at every width.
+ * The trailing `+ your own` ghost chip signals that the taxonomy
+ * is open-ended (users can add custom categories).
+ */
+.chip-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.03);
+  transition: transform 140ms ease, box-shadow 140ms ease,
+    border-color 140ms ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-soft);
+  box-shadow: 0 6px 14px rgba(26, 26, 26, 0.05);
+}
+
+.chip__emoji {
+  font-size: 18px;
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+
+.chip--ghost {
+  background: transparent;
+  border: 1px dashed var(--accent);
+  color: var(--accent-strong);
+  justify-content: center;
+}
+
+.chip--ghost:hover {
+  background: var(--accent-mist);
+  border-color: var(--accent);
 }
 
 /*
  * Pilot-cities block. Four cards in a 2-up grid (1-up on the smallest
- * screens). Each card is a city name with its emoji anchor mirrored
- * from the in-app rankings hero, and the surrounding copy frames the
- * "we'd love help here" pitch.
+ * screens). Each card mirrors the in-app rankings hero treatment — an
+ * emoji anchor on a soft accent disc, city name beside it.
  */
-.cities-intro {
-  margin-bottom: 16px;
-}
-
 .city-grid {
   list-style: none;
   padding: 0;
@@ -204,11 +393,17 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   background: var(--surface);
   border: 1px solid var(--border-soft);
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow: 0 2px 6px rgba(26, 26, 26, 0.04);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.city-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(26, 26, 26, 0.06);
 }
 
 .city-card__emoji {
@@ -225,25 +420,64 @@ body {
 
 .city-card__label {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text);
 }
 
 .cities-helper {
-  margin: 0;
+  margin: 4px 0 0;
   color: var(--muted);
   font-size: 14px;
 }
 
-.steps ol {
-  padding-left: 22px;
+/*
+ * "How to join" — three numbered steps. We hide the default ol numeral
+ * and use a custom counter so the digit can sit in a soft pink disc,
+ * matching the feature-card numerals upstream.
+ */
+.step-list {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.steps ol li {
+.step-list li {
+  position: relative;
+  padding: 16px 20px 16px 60px;
   margin-bottom: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.03);
+  counter-increment: step;
 }
 
+.step-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+ * Legal pages keep using the older `.hero` (no --landing) and the
+ * `.legal-header` overrides for the breadcrumb / title / effective
+ * date stack. Nothing below needs to know about the landing page.
+ */
 .legal-header {
   margin-bottom: 24px;
 }
@@ -293,9 +527,11 @@ li {
   margin-bottom: 6px;
 }
 
-/* Body links lean on the darker rose so they stay legible on white;
+/*
+ * Body links lean on the darker rose so they stay legible on white;
  * brand-coloured surfaces (badge, CTA, wordmark) keep the softer
- * `--accent` so the page still reads as the app's pink. */
+ * `--accent` so the page still reads as the app's pink.
+ */
 a {
   color: var(--accent-strong);
   text-decoration: none;
@@ -318,17 +554,27 @@ a:hover {
 }
 
 .links a {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .footer {
   margin-top: 64px;
-  padding-top: 24px;
+  padding-top: 32px;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 14px;
   text-align: center;
+}
+
+/* The footer wordmark is a small, dimmed echo of the hero — a quiet
+ * signature mark, not a second logo lockup. */
+.footer__wordmark {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 0 auto 12px;
+  opacity: 0.35;
 }
 
 code {
