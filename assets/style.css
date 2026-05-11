@@ -142,9 +142,10 @@ body {
   display: inline-block;
   width: min(320px, 70vw);
   height: auto;
-  /* The wordmark is solid black-on-transparent. A light opacity nudge
-   * softens it on the cream canvas so it reads as confident editorial
-   * type rather than printer-ink black. */
+  /* mix-blend-mode: multiply makes the white/transparent background
+   * of the PNG vanish so only the black letterforms show against the
+   * cream canvas. opacity nudges toward warm rather than stark black. */
+  mix-blend-mode: multiply;
   opacity: 0.92;
 }
 
@@ -574,6 +575,7 @@ a:hover {
   width: 120px;
   height: auto;
   margin: 0 auto 12px;
+  mix-blend-mode: multiply;
   opacity: 0.35;
 }
 
