@@ -14,6 +14,7 @@ Branch: `main`, Folder: `/`), the pages live at:
 - Index: <https://trevornogues.github.io/sweetest-public-pages/>
 - Privacy Policy: <https://trevornogues.github.io/sweetest-public-pages/privacy/>
 - Terms of Service: <https://trevornogues.github.io/sweetest-public-pages/terms/>
+- Account deletion: <https://trevornogues.github.io/sweetest-public-pages/delete-account/>
 
 These are the URLs to paste into App Store Connect and the Google Play Console.
 
@@ -21,11 +22,13 @@ These are the URLs to paste into App Store Connect and the Google Play Console.
 
 ```
 .
-├── index.html              # Landing page with links to /privacy and /terms
+├── index.html              # Landing page with links to legal pages
 ├── privacy/
 │   └── index.html          # Privacy Policy
 ├── terms/
 │   └── index.html          # Terms of Service
+├── delete-account/
+│   └── index.html          # Account deletion instructions
 ├── assets/
 │   └── style.css           # Shared styles
 ├── .nojekyll               # Tells GitHub Pages to serve files as-is (no Jekyll)
