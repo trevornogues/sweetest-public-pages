@@ -160,6 +160,10 @@ body {
 
 .cta-row {
   margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
 
 .cta {
@@ -190,8 +194,22 @@ body {
   box-shadow: 0 14px 28px rgba(213, 130, 157, 0.40);
 }
 
+.cta--secondary {
+  background: var(--surface);
+  color: var(--accent-strong);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 16px rgba(26, 26, 26, 0.06);
+}
+
+.cta--secondary:hover {
+  background: var(--accent-mist);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(26, 26, 26, 0.08);
+}
+
 .cta-helper {
-  margin: 14px 0 0;
+  flex-basis: 100%;
+  margin: 4px 0 0;
   color: var(--muted);
   font-size: 14px;
 }
