@@ -15,7 +15,7 @@
     <header class="legal-header">
       <p class="breadcrumb"><a href="/sweetest-public-pages/">&larr; Sweetest</a></p>
       <h1>Privacy Policy</h1>
-      <p class="effective">Effective date: May 11, 2026</p>
+      <p class="effective">Effective date: May 21, 2026</p>
     </header>
 
     <p>This Privacy Policy describes how Trevor Nogues ("we," "us," or "our") collects, uses, and shares information when you use the Sweetest mobile application (the "App"). By using the App, you agree to this Privacy Policy. If you do not agree, do not use the App.</p>
@@ -37,6 +37,7 @@
       <li><strong>Device and usage data.</strong> Our backend provider (Google Firebase) may collect basic technical information such as device type, operating system, app version, IP address, and crash logs to keep the service running and secure.</li>
       <li><strong>Authentication metadata.</strong> Sign-in timestamps and authentication tokens needed to keep you signed in.</li>
       <li><strong>Approximate device location (optional, foreground only).</strong> If you grant the App permission, we read a low-accuracy device location <em>only while the App is open</em> and use it to bias place-search results to where you are. We never track your location in the background, do not store the raw coordinates on our servers, and do not associate them with your account. You can deny or revoke this permission at any time in your device settings; the App will fall back to your home city or a default city for biasing.</li>
+      <li><strong>Usage analytics.</strong> When you use the App, we log behavioral events — such as completing signup, saving a ranking entry, creating a group, or accepting a group invite — along with your account identifier, app version, platform (iOS/Android), an anonymized session identifier, and enumerated parameters (for example, a dessert category or a boolean flag). We never log raw user content such as place names, notes, or usernames in analytics. These events are stored in our own Firestore database and also forwarded to Firebase Analytics (Google&rsquo;s GA4 service). We additionally send a small set of account-level properties to Firebase Analytics: your home city (if set), an approximate usage tier based on entry count, your privacy setting (public/private), the week you created your account, and your app version.</li>
     </ul>
 
     <p>We do not use third-party advertising SDKs.</p>
@@ -60,6 +61,7 @@
       <li><strong>Service providers.</strong> We share information with vendors who process data on our behalf under contractual privacy obligations:
         <ul>
           <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Storage, Cloud Functions) hosts the App&rsquo;s data and runs our backend. See <a href="https://firebase.google.com/support/privacy">Firebase&rsquo;s Privacy and Security page</a>.</li>
+          <li><strong>Firebase Analytics (Google).</strong> We use Firebase Analytics (GA4) to understand how users engage with the App — for example, which features are used, how users progress through signup, and how often entries are saved. Firebase Analytics receives the behavioral events and account properties described in Section 1. Data is processed by Google under their <a href="https://firebase.google.com/terms/data-processing-terms">Firebase Data Processing Terms</a>. Google states it does not use Firebase Analytics data for advertising purposes. See <a href="https://firebase.google.com/support/privacy">Firebase&rsquo;s Privacy and Security page</a>.</li>
           <li><strong>Foursquare</strong> powers our place-search autocomplete. When you type into a place-search field in the App, we send your search query and an approximate location bias (your device location, your home city, or a default city) to Foursquare to retrieve matching place suggestions. Your account identifier is never sent. See <a href="https://foursquare.com/legal/privacy/">Foursquare&rsquo;s Privacy Policy</a>.</li>
           <li><strong>App stores and testing programs.</strong> When you install Sweetest through the App Store or a testing program such as Google Play testing, Apple or Google may collect standard app store, tester, device, build, session, crash, and feedback details under their own policies. See <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a>.</li>
         </ul>
