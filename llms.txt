@@ -1,0 +1,43 @@
+# Sweetest
+
+> Sweetest (App Store name: Sweetest Bites) is a free app for ranking the sweet treats you've eaten. Build a personal top-10 per category by comparing new entries head-to-head, follow friends, and see anonymous city, state, and national leaderboards built from real rankings. No star ratings, no long reviews, no ads.
+
+- Developer: Trevor Nogues (solo project). GitHub: https://github.com/trevornogues
+- Platforms: iOS (App Store) and Android (closed beta on Google Play).
+- Download: https://apps.apple.com/us/app/sweetest-bites/id6764402157
+- Android beta: https://play.google.com/apps/testing/com.trevornogues.sweetest
+- Launched: May 15, 2026 (1.0). Current version: 1.10 (September 25, 2026).
+- Focus cities for leaderboards, map, and pop-ups: Seattle, New York, Los Angeles, San Francisco. Personal lists work anywhere.
+- Support: sweetestbitesapp@gmail.com
+- Social: https://www.instagram.com/sweetest.app/ , https://www.tiktok.com/@sweetestbitesapp , https://linktr.ee/sweetest.app
+
+## Pricing
+
+- Free. No subscription, no in-app purchases, no advertising.
+
+## What it does
+
+- Personal rankings: one top-10 per category (cookies, croissants, ice cream, soft serve, donuts, boba, cake, chocolate, pie, bread, drinks, pop-ups, custom categories). Add a place, compare it head-to-head against entries already ranked, and the list reorders itself.
+- Friends feed: what people you follow just ranked, with notes and photos, likes, comments, and tagging.
+- Leaderboards: anonymous, aggregated city, state, and national bests per category, plus a map of top-ranked spots. Rankings with tags and a slider carry 1.2x weight.
+- Pop-ups: a separate category for bakers without storefronts, upcoming pop-ups by city, star events you want to attend.
+- Taste Identity: tags and sliders on entries show where your taste leans; compare with friends and places.
+- Monthly Sweet Challenge: rank five new spots in a featured category.
+- Privacy: public or private profile. Private lists are visible only to approved followers; rankings still count anonymously toward leaderboards.
+- Reporting, blocking, and in-app account deletion.
+
+## Privacy
+
+- Account: email, hashed password (Firebase Authentication), username. Data stored on Google Firebase.
+- Optional foreground-only approximate location to bias place search; not stored on servers.
+- Place search via Foursquare. Usage analytics via Firebase Analytics; no third-party advertising SDKs.
+- Delete your account from Settings or by email. Details: https://trevornogues.github.io/sweetest-public-pages/privacy/
+
+## Pages
+
+- Home: https://trevornogues.github.io/sweetest-public-pages/
+- Changelog: https://trevornogues.github.io/sweetest-public-pages/changelog/
+- Privacy Policy: https://trevornogues.github.io/sweetest-public-pages/privacy/
+- Terms of Service: https://trevornogues.github.io/sweetest-public-pages/terms/
+- Delete your account: https://trevornogues.github.io/sweetest-public-pages/delete-account/
+- Child Safety Standards: https://trevornogues.github.io/sweetest-public-pages/child-safety/
